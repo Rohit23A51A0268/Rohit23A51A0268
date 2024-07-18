@@ -1,0 +1,325 @@
+/*  To - Do List webpage (responsive for both desktops and mobile phones)*/
+/* This is a CSS file in which the skeleton of the website was attractively styled*/
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* 'todo' class styled to set background to whole webpage */
+.todo{
+
+  background: linear-gradient(135deg, rgba(105, 30, 105, 0.534), rgba(141, 63, 141, 0.534)), url("background.jpg");
+  height: 150vh;
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* 'app' class styled to set all similar properties to  different elements */
+.app{
+  width: 100%;
+  max-width: 540px;
+  background: transparent;
+  padding-left: 25%; 
+}
+
+
+/* 'h2' tag which is the heading is styled here*/
+.app h2{
+
+display: flex;
+text-align: center;
+padding-top: 29px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 7vh;
+padding-left: 20vh;
+}
+
+
+/* we styled the icon of note making image*/
+.app h2 img{
+
+  width: 50px;
+  height: 50px;
+  padding-left: 18px;
+}
+
+
+/* we styled 'row' class to set similar properties to input & button elements*/
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(216, 199, 216, 0.534);
+  padding-left: 20px;
+  border-radius: 30px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+
+/* input element styled here*/
+input{
+
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-weight: 14px;
+}
+
+
+/* button of name "Add" styled here*/
+button{
+
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: #7f5092;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+
+/* 'li' properties under 'ul' are set here */
+ul li{
+
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  padding-right: 88px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* inserting an image of unchecked before 'li'*/
+ul li::before{
+
+  content: '';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50px;
+  background-image: url("unchecked.png");
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+  margin-top: -4px;
+}
+
+
+/* already we have 'checked' class for 'li'. So, we heve given strike through decoration and colour here*/
+ul li.checked{
+
+  color: #3f3e3e;
+  text-decoration: line-through;
+}
+
+
+/* we set another checked image here before 'li' (It will work properly by adding javascript to it)*/
+ul li.checked::before{
+
+  background-image: url("checked.png");
+
+}
+
+
+/* we positioned the delete icon*/
+.delete-icon{
+
+  position: absolute;
+  right: 100px;
+  top: 5px;
+  width: 4px;
+  height: 4px;
+  cursor: pointer;
+  
+}
+
+
+/* we gave dimentions of delete img */
+.delete-icon img{
+
+  width: 30px;
+  height: 30px;
+}
+
+
+
+/* we positioned the edit icon*/
+.edit-icon{
+
+  position: absolute;
+  right: 50px;
+  top: 5px;
+  width: 4px;
+  height: 4px;
+  cursor: pointer;
+  
+}
+
+
+/* we gave dimentions of edit img */
+.edit-icon img{
+
+  width: 30px;
+  height: 30px;
+}
+
+
+
+/* This is for mobile view */
+@media screen and (max-width :360px) {
+
+  *{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .todo{
+  
+    background: linear-gradient(135deg, rgba(105, 30, 105, 0.534), rgba(141, 63, 141, 0.534)), url("background.jpg");
+    height: 130vh;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .app{
+    width: 90%;
+    max-width: 500px;
+    background: transparent;
+    padding-left: 5%; 
+  }
+  
+  .app h2{
+  
+  display: flex;
+  text-align: center;
+  padding-top: 12px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 3vh;
+  padding-left: 12vh;
+  }
+  
+  .app h2 img{
+  
+    width: 25px;
+    height: 25px;
+    padding-left: 10px;
+  }
+  
+  .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(216, 199, 216, 0.534);
+    padding-left: 20px;
+    border-radius: 30px;
+    margin-bottom: 27px;
+    margin-top: 10px;
+  }
+  
+  input{
+  
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0px;
+    font-weight: 16px;
+  }
+  
+  button{
+  
+    border: none;
+    outline: none;
+    padding: 10px 18px;
+    background: #7f5092;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 40px;
+  }
+  
+  ul li{
+  
+    list-style: none;
+    font-size: 12px;
+    padding: 15px 8px 12px 50px;
+    padding-right: 88px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  
+  ul li::before{
+  
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50px;
+    background-image: url("unchecked.png");
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+    margin-top: -4px;
+  }
+  
+  ul li.checked{
+  
+    color: #3f3e3e;
+    text-decoration: line-through;
+  }
+  
+  ul li.checked::before{
+  
+    background-image: url("checked.png");
+   
+  }
+  
+  .delete-icon{
+  
+    position: absolute;
+    right: 55px;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    cursor: pointer;
+    
+  }
+  
+  .delete-icon img{
+  
+    width: 20px;
+    height: 20px;
+  }
+  
+  .edit-icon{
+  
+    position: absolute;
+    right: 25px;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    cursor: pointer;
+    
+  }
+  
+  .edit-icon img{
+  
+    width: 20px;
+    height: 20px;
+  }
+  
+}
