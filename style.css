@@ -130,6 +130,14 @@ ul li.checked::before{
 
 }
 
+/* date and time*/
+.date-time{
+
+  display: block;
+  font-size: 0.8em;
+  color: rgb(37, 88, 122);
+}
+
 
 /* we positioned the delete icon*/
 .delete-icon{
@@ -172,6 +180,7 @@ ul li.checked::before{
   width: 30px;
   height: 30px;
 }
+
 
 
 
