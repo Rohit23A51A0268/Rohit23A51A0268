@@ -187,7 +187,7 @@ ul li.checked::before{
   .todo{
   
     background: linear-gradient(135deg, rgba(105, 30, 105, 0.534), rgba(141, 63, 141, 0.534)), url("background.jpg");
-    height: 130vh;
+    height: 157vh;
     background-size: cover;
     background-position: center;
   }
@@ -205,14 +205,14 @@ ul li.checked::before{
   text-align: center;
   padding-top: 12px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 3vh;
+  font-size: 4vh;
   padding-left: 12vh;
   }
   
   .app h2 img{
   
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     padding-left: 10px;
   }
   
@@ -241,10 +241,10 @@ ul li.checked::before{
   
     border: none;
     outline: none;
-    padding: 10px 18px;
+    padding: 14px 30px;
     background: #7f5092;
     color: #fff;
-    font-size: 12px;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 40px;
   }
@@ -252,12 +252,13 @@ ul li.checked::before{
   ul li{
   
     list-style: none;
-    font-size: 12px;
+    font-size: 16px;
     padding: 15px 8px 12px 50px;
     padding-right: 88px;
     user-select: none;
     cursor: pointer;
     position: relative;
+    
   }
   
   
@@ -265,8 +266,8 @@ ul li.checked::before{
   
     content: '';
     position: absolute;
-    height: 28px;
-    width: 28px;
+    height: 33px;
+    width: 33px;
     border-radius: 50px;
     background-image: url("unchecked.png");
     background-size: cover;
@@ -291,7 +292,7 @@ ul li.checked::before{
   .delete-icon{
   
     position: absolute;
-    right: 55px;
+    right: 65px;
     top: 8px;
     width: 4px;
     height: 4px;
@@ -301,8 +302,8 @@ ul li.checked::before{
   
   .delete-icon img{
   
-    width: 20px;
-    height: 20px;
+    width: 27px;
+    height: 27px;
   }
   
   .edit-icon{
@@ -318,8 +319,17 @@ ul li.checked::before{
   
   .edit-icon img{
   
-    width: 20px;
-    height: 20px;
+    width: 27px;
+    height: 27px;
   }
   
+  /* Remove focus and active styles for all elements */
+* {
+  -webkit-tap-highlight-color: transparent; /* For Safari */
+  outline: none; /* For other browsers */
+}
+
+
+
+ 
 }
