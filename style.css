@@ -176,7 +176,7 @@ ul li.checked::before{
 
 
 /* This is for mobile view */
-@media screen and (max-width :360px) {
+@media screen and (max-width :600px) {
 
   *{
     padding: 0;
