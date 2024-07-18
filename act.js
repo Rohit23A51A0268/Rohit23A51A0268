@@ -31,6 +31,12 @@ function addTask(){
    const taskSpan = document.createElement('span');
    taskSpan.textContent = inputBox.value;
    li.appendChild(taskSpan);
+
+   // Create a span to hold the date and time
+   const dateSpan = document.createElement('span');
+   dateSpan.classList.add('date-time');
+   dateSpan.textContent = new Date().toLocaleString(); // Get current date and time
+   li.appendChild(dateSpan);
     
     // Create a delete icon
   const deleteIcon = document.createElement("span");
@@ -56,6 +62,21 @@ storeData();
 listContainer.addEventListener("click", function(e) {
   if (e.target.tagName === "LI" || e.target.tagName === "SPAN" && !e.target.classList.contains('delete-icon') && ! e.target.classList.contains('edit-icon')) {
       e.target.classList.toggle("checked");
+
+
+      // Update the date and time when checked or unchecked
+    const li = e.target.closest('li');
+    const oldDateSpan = li.querySelector('.date-time');
+    if (oldDateSpan) oldDateSpan.remove();
+
+
+      const dateSpan = document.createElement('span');
+      dateSpan.classList.add('date-time');
+      dateSpan.textContent = new Date().toLocaleString(); // Get current date and time
+
+
+      
+      li.appendChild(dateSpan);
       storeData();
   } 
 
@@ -75,12 +96,29 @@ listContainer.addEventListener("click", function(e) {
         if (newText !== null && newText.trim() !== "") {
             
           taskSpan.textContent = newText;
+          
+          //edit time
+          const li = e.target.closest('li');
+          const oldDateSpan = li.querySelector('.date-time');
+          if (oldDateSpan) oldDateSpan.remove();
+      
+      
+            const dateSpan = document.createElement('span');
+            dateSpan.classList.add('date-time');
+            dateSpan.textContent = new Date().toLocaleString(); // Get current date and time
+      
+      
+            
+            li.appendChild(dateSpan);
+       
         }
         storeData();
   }
 
  
 }, false);
+
+
 
 
 // Function created to store data which can also available after refreshing the page 
