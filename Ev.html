@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EV Friend</title>
+  <!--Linking CSS file-->
+  <link rel="stylesheet" href="Ev.css">
+</head>
+<body>
+    <!--Creating menu bar items-->
+    <div class="menu-bar">
+      <h1 class="logo">EV Friend <img src="logo.png" alt=""></h1>
+       
+    <ul id="ul">
+      <li><a href="#">EV Admin &#x25BE;</a>
+
+      <div class="dropdown">
+        <ul>
+          <li id="adminLogin"><a href="#">Login</a></li>
+          <li id="adminRegister"><a href="#">Register</a></li>
+          <li id="create"><a href="#">Create EV Bunk Location Details</a></li>
+          <li id="managebunk"><a href="#">Manage Bunk Details</a></li>
+          <li id="recharge"><a href="#">Manage Recharge Slots</a></li>
+        </ul>
+      </div>
+      </li>
+      <li><a href="#">User &#x25BE;</a>  
+        <div class="dropdown">
+          <ul>
+            <li id="login-menu"><a href="#">Login</a></li>
+            <li id="reg-menu"><a href="#">Register</a></li>
+            <li id="nearby"><a href="#">Search Nearby EV Bunk</a></li>
+            <li id="g-map"><a href="https://www.google.com/maps/search/Elecctrical+Bunks+for+electrical+vehicalsnear+by+me+">Search EV Bunk by G-Map</a></li>
+          </ul>
+        </div>
+      </li>
+      <li id="abtBtn"><a href="#">About</a></li>
+    </ul>
+    </div>
+    <!--Main page-->
+    <section class="tag" id="content">
+      &nbsp;
+      <div class="para" id="pgraph">
+        <h4>Seamless EV Charging Solutions</h4>
+        <p>Our platform connects EV owners with recharge bunk holders through an intuitive interface. <br>
+           With just a few clicks, users can log in and access Google Maps to find and book convenient <br>
+           charging slots for their electric vehicles. Whether you're an EV holder looking for a nearby <br>
+           charging station or a recharge bunk holder managing available slots, our website ensures a <br>
+           smooth and efficient booking experience.</p>
+      </div>
+      <!--Making Login Page-->
+      <div class="login" id="login-box">
+
+        <h2>Login</h2>
+        <input type="text" id="username" class="user" placeholder="Username" required>
+        <input type="password" id="password" class="user" placeholder="Password" required>
+        <h4>Don't have an account?<a href="#" id="click">Register</a>&nbsp;&nbsp;here.</h4>
+        
+        <div class="btns">
+          <button class="submit" id="submit">Submit</button>
+          <button class="close" id="close">Cancel</button>
+        </div>
+        
+      </div>
+      <!--Making Register Page-->
+      <div class="reg" id="reg-box">
+
+        <h2>Register</h2>
+        <input type="text" id="username" class="user" placeholder="Create a username" required>
+        <input type="email" id="email" class="user" placeholder="Enter your email" required>
+        <input type="password" id="password" class="user" placeholder="Set a password" required>
+        
+        <div class="btns">
+          <button class="submit" id="submit">Submit</button>
+          <button class="close" id="cls">Cancel</button>
+        </div>
+
+      </div>
+      <!--Making Create EV Bunk Details-->
+      <div class="bunk" id="ev-bunk">
+        <h2>Create EV Bunk Details</h2>
+        <label for="text" class="admin">Name of the EV Bunk</label>
+        <input type="text" class="fill" id="input1" placeholder="must be filled">
+        <label for="text" class="admin">Owner Name</label>
+        <input type="text" class="fill" id="input2" placeholder="must be filled">
+        <label for="text" class="admin">State</label>
+        <input type="text" class="fill" id="input3" placeholder="must be filled">
+        <label for="text" class="admin">District</label>
+        <input type="text" class="fill" id="input4" placeholder="must be filled">
+        <label for="text" class="admin">Mandal</label>
+        <input type="text" class="fill" id="input5" placeholder="must be filled">
+        <label for="text" class="admin">City/Village</label>
+        <input type="text" class="fill" id="input6" placeholder="must be filled">
+        <label for="text" class="admin">Area Pin Code</label>
+        <input type="text" class="fill" id="input7" placeholder="must be filled">
+        <div class="btnn">
+          <h3>Detalis will be auto saved</h3>
+          <button class="sub" onclick="addTask()">Back</button>
+        </div>
+      </div>
+
+      <div class="manage">
+        <h2>Manage Bunk Details</h2>
+        
+        <input type="text" class="details" id="copy1" placeholder="Landline / mobile number" required>
+        <input type="text" class="details" id="copy2" placeholder="Total no. of recharge slots" required>
+        <input type="text" class="details" id="copy3" placeholder="Cost per hour charging in rupees" required>
+        <h3>Each field must be filled <br> <br> Detalis will be auto saved</h3>
+        <div class="clicks">
+          <button class="ok" onclick="addTask()">Back</button>
+        </div>
+      </div>
+
+      <div class="slot">
+        <h2>Manage Recharge Slots</h2>
+
+        <input type="text" id="grab1" placeholder="No.of available slots right now" required>
+        <input type="text" id="grab2" placeholder="No.of available slots after 30 mins" required>
+        <input type="text" id="grab3" placeholder="No.of available slots after 1 hour" required>
+        <input type="text" id="grab4" placeholder="No.of available slots after 2 hours" required>
+        <h3>Each field must be filled<br> <br> Detalis will be auto saved</h3>
+        <div class="butnn">
+          <button class="okk" onclick="addTask()">Back</button>
+        </div>
+      </div>
+
+      <h2 class="availability">Ev Bunks available</h2>
+      <div class="present" id="list-container">
+        
+
+        <ul class="lbls">
+        <li class="info">Name of the EV Bunk</li>
+        <li class="info">Owner Name</li>
+        <li class="info">State</li>
+        <li class="info">District</li>
+        <li class="info">Mandal</li>
+        <li class="info">City/Village</li>
+        <li class="info">Area Pin Code</li>
+        <li class="info">Landline/Mobile no.</li>
+        <li class="info">Total no. of recharge slots</li>
+        <li class="info">Cost per hour charging in rupees</li>
+        <li class="info">No.of available slots right now</li>
+        <li class="info">No.of available slots after 30 mins</li>
+        <li class="info">No.of available slots after 1 hour</li>
+        <li class="info">No.of available slots after 2 hours</li>
+      </ul>
+
+        <ul class="list">
+          <li class="EV" id="list1"></li>
+        <li class="EV" id="list2"></li>
+        <li class="EV" id="list3"></li>
+        <li class="EV" id="list4"></li>
+        <li class="EV" id="list5"></li>
+        <li class="EV" id="list6"></li>
+        <li class="EV" id="list7"></li>
+        <li class="EV" id="paste1"></li>
+        <li class="EV" id="paste2"></li>
+        <li class="EV" id="paste3"></li>
+        <li class="EV" id="drop1"></li>
+        <li class="EV" id="drop2"></li>
+        <li class="EV" id="drop3"></li>
+        <li class="EV" id="drop4"></li>
+        </ul>
+
+        <div class="touch">
+          <button class="nope">Back</button>
+        </div>
+      </div>
+
+      <div class="tested">
+        <img src="submitted.png" alt="successfully submitted">
+        <h2>You have successfully submitted the details</h2>
+        <button class="done">Ok</button>
+      </div>
+
+      <div class="about">
+        <h2>About EV Friend</h2>
+        <h4>Introduction</h4>
+        <p>Welcome to EV Friend, your reliable partner in finding and booking EV recharge <br>
+          slots with ease. Our platform connects EV holders with recharge bunk holders,<br>
+          making the recharging process seamless and efficient.
+        </p>
+
+        <h4>Our Mission</h4>
+        <p>At EV Friend, our mission is to simplify the recharging experience for electric vehicle <br>
+          owners and support the growth of sustainable transportation. We aim to create a <br>
+          network of trusted recharge points that are easily accessible and convenient for everyone.
+        </p>
+
+        <h4>Our Story</h4>
+        <p>EV Friend was born out of a desire to address the challenges faced by EV owners in <br>
+          finding available recharge slots. Inspired by the increasing demand for electric <br>
+          vehicles and the need for a more organized recharging system, we set out to <br>
+          develop a solution that benefits both EV holders and recharge bunk operators.
+        </p>
+
+        <h4>Our Future Plans</h4>
+        <p>We are committed to continuously improving EV Friend by adding more features <br>
+          and expanding our network of recharge points. Stay tuned for exciting updates!
+        </p>
+         
+        <h3>Thanks for Joining Us..!</h3>
+
+        <button class="clsAbt">Close this page</button>
+      </div>
+
+    </section>
+    <script src="live.js"></script>
+</body>
+</html>
